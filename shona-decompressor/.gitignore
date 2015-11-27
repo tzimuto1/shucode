@@ -1,0 +1,11 @@
+shonanews.txt.*
+dum.*
+*.dum
+*~
+*#*
+*.o
+*.a
+shona_decompressor
+tests/*test
+TODO.txt
+*.s*

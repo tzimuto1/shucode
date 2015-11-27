@@ -1,0 +1,13 @@
+shonanews.txt.*
+dum.*
+*.dum
+*~
+*#
+*.o
+*.a
+shona_compressor
+tests/*test
+TODO.txt
+*.s*
+files
+scripts/freq*
