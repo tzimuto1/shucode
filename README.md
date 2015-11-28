@@ -21,6 +21,7 @@ I could have included the syllables with all the characters in uppercase. I didn
 | 255K            | 117K             | 54%         | Shona Text: From Wikipedia and news articles                      |
 | 5.3M            | 3.0M             | 43%         | English Text: All works by Shakespeare                            |
 | 6.4M            | 3.4M             | ~47%        | Shona Text: Shona Bible with about 2KB or nonprintable characters |
+| 7.1M            | 3.2M             | 55%         | Shona Text: Another Shona Bible Version                           |
 
 
 [1] The nonprintable ascii characters are ignored if they exist in the document. Since compression can produce any extended ASCII character, printable or not, we can't compress the result of compression and still recover the orginal file. Using one level of compression, we recover the original file.
