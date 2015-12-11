@@ -70,18 +70,14 @@ int compress_file(file_data *fd, node *codebook, int cb_len, char *dest_file)
 	}
 	else
 	{
-	    total_val = cur_val + (code_val >> (code_len + cur_len - 8));
-	    c = total_val;
-	    fwrite(&c, sizeof(char), 1, fp);
-	    int mask = (1 << (code_len + cur_len - 8)) -1;
-	    cur_len  = code_len + cur_len - 8;
-	    cur_val  = (code_val & mask);
+	    cur_val = (cur_val << (total_len - 8))+ code_val;
+	    cur_len = code_len + cur_len;
 	    
 	    while (cur_len >= 8)
 	    {
 		c = cur_val >> (cur_len - 8);
 		fwrite(&c, sizeof(char), 1, fp);
-		mask = (1 << (cur_len - 8)) - 1;
+		int mask = (1 << (cur_len - 8)) - 1;
 		cur_len = (cur_len - 8);
 		cur_val = cur_val & mask;
 		PRINT("Len > 8, cur_val: %i, cur_len: %i, total_val: %i, total_len: %i. code_val: %i\n", cur_val, cur_len, c, total_len, code_val);
